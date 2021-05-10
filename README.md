@@ -21,8 +21,7 @@ Birden fazla kez verilen sözlerin tamamının düzgün bir şekilde yerine geti
 ![alt text](https://github.com/fatay/Asenkron-Javascript/blob/main/promise_all/promise_all.jpg)
 
 ### Async & Await ###
-Kodun mantıksal olarak lineer aktığı ve üstte tamamlanmamış bir işlemin; alttaki kullanımlarında hata almasının olası olduğu durumlarda; tamamlanmasının beklenmesini istediğinde.
-
+Kodun mantıksal olarak lineer aktığı ve üstte tamamlanmamış bir işlemin; alttaki kullanımlarında hata almasının olası olduğu durumlarda.
 -> fetch() ve forEach() ile sanal gönderileri çekmek ve async await ile sonuçları:
 
 ![alt text](https://github.com/fatay/Asenkron-Javascript/blob/main/async_await/console_result.jpg)
