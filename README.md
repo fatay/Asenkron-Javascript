@@ -26,5 +26,7 @@ Kodun mantıksal olarak lineer aktığı ve üstte tamamlanmamış bir işlemin;
 
 ![alt text](https://github.com/fatay/Asenkron-Javascript/blob/main/async_await/console_result.jpg)
 
+Not: async & await yapısının kullanıldığı fonksiyonlar asenkron olduğundan promise objesi döndürür. Bu nedenle async & await kullanılan fonksiyonları çağırmak için .then() ve .catch() kullanılmalıdır!
+
 
 Fatih Aydin, 2021
