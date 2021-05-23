@@ -45,6 +45,24 @@ function showTodoList() {
 
 Bu listeye yeni bir eleman eklemek için şöyle bir metodumuz olsun ve bu işlem 3 saniye sürsün;
 ```js
+function importTodo(newTodoItem) {
+  setTimeout(() => {
+    allTodoList.push(newTodoItem);
+  }, 3000); // 3sn
+}
+
+// yeni eleman ekleyelim
+importTodo({
+  title : "Yapılacak İş #4",
+  description: "Akşama teyzemi ziyaret edeceğim."
+}, showTodoList);
+
+```
+
+Yukarıdaki kullanım düzgün çalışmayacaktır çünkü buradaki temel problem; görüntüleme işlemi 1 saniye ve eleman ekleme 3 saniye süreceğinden, görüntüleme işlemi önce bitecektir. Bu nedenle ekleme işlemi henüz tamamlanmadan görüntüleme işlemi yapılacağından son olarak eklediğimiz "Yapılacak İş #4" listede görüntülenmeyecektir. Bu nedenle ekleme işlemi bittikten sonra görüntüleme metodunu tekrar çağırmalıyız.
+
+Doğru kullanım callback eklenerek aşağıdaki şekilde olmalıdır:
+```js
 function importTodo(newTodoItem, callback) {
   setTimeout(() => {
     allTodoList.push(newTodoItem);
@@ -57,10 +75,7 @@ importTodo({
   title : "Yapılacak İş #4",
   description: "Akşama teyzemi ziyaret edeceğim."
 }, showTodoList);
-
 ```
-
-Buradaki temel problem; görüntüleme işlemi 1 saniye ve eleman ekleme 3 saniye süreceğinden, görüntüleme işlemi önce bitecektir. Bu nedenle ekleme işlemi daha tamamlanmadan görüntüleme işlemi yapılacağından son olarak eklediğimiz "Yapılacak İş #4" listede görüntülenmeyecektir. Bu nedenle ekleme işlemi bittikten sonra görüntüleme metodunu tekrar çağırmalıyız.
 
 ![alt text](https://github.com/fatay/Asenkron-Javascript/blob/main/callbacks/callback0.png)
 ![alt text](https://github.com/fatay/Asenkron-Javascript/blob/main/callbacks/callback1.jpg)
