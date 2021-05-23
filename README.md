@@ -39,17 +39,17 @@ function showTodoList() {
       `;
     });
     todoList.innerHTML = todoItems;
-  }, 1000);
+  }, 1000); // 1sn
 }
 ```
 
-Bu listeye yeni bir eleman eklemek için şöyle bir metodumuz olsun ve bu işlem 2 saniye sürsün;
+Bu listeye yeni bir eleman eklemek için şöyle bir metodumuz olsun ve bu işlem 3 saniye sürsün;
 ```js
 function importTodo(newTodoItem, callback) {
   setTimeout(() => {
     allTodoList.push(newTodoItem);
     callback();
-  }, 2000);
+  }, 3000); // 3sn
 }
 
 // yeni eleman ekleyelim
@@ -60,7 +60,7 @@ importTodo({
 
 ```
 
-Buradaki temel problem; görüntüleme işlemi 1 saniye ve eleman ekleme 2 saniye süreceğinden, görüntüleme işlemi önce bitecektir. Bu nedenle ekleme işlemi daha tamamlanmadan görüntüleme işlemi yapılacağından son olarak eklediğimiz "Yapılacak İş #4" listede görüntülenmeyecektir. Bu nedenle ekleme işlemi bittikten sonra görüntüleme metodunu tekrar çağırmalıyız.
+Buradaki temel problem; görüntüleme işlemi 1 saniye ve eleman ekleme 3 saniye süreceğinden, görüntüleme işlemi önce bitecektir. Bu nedenle ekleme işlemi daha tamamlanmadan görüntüleme işlemi yapılacağından son olarak eklediğimiz "Yapılacak İş #4" listede görüntülenmeyecektir. Bu nedenle ekleme işlemi bittikten sonra görüntüleme metodunu tekrar çağırmalıyız.
 
 ![alt text](https://github.com/fatay/Asenkron-Javascript/blob/main/callbacks/callback0.png)
 ![alt text](https://github.com/fatay/Asenkron-Javascript/blob/main/callbacks/callback1.jpg)
