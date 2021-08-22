@@ -84,9 +84,7 @@ importTodo({
 Yukarıdaki problemi, birbirlerini bekleyen asenkron bir yapı(async/await) kurarak promise ile daha iyi bir şekilde çözebiliriz.
 
 ### Async & Await ###
-Bildiğimiz üzere derleyiciler veya yorumlayıcılar kodu yukarıdan aşağıya lineer bir şekilde okurlar. Bu durum birbirlerinin işlerini beklemesi gereken metod kullanımlarında hataya yol açar. 
-
-Örneğin bir API kullanarak gönderileri çektiğimiz bir yapı olsun. Verilerin tamamı çekilmeden forEach ile verilere erişilmeye çalışılacağından .forEach not a function hatasını alırız.
+Asenkron bir yapıda her şey eşzamanlı(aynı anda) yürütülür. Bu durum işlemlerin paralel olarak yürütülmesini sağlar ve hız kazanımı sağlar. Fakat burada dikkat edilmesi gereken nokta, birbirini beklemesi gereken durumlarda await kullanmamız gerektiğidir. Birbiriyle ilgili olan işlemlerde A işlemi B işleminin sonucuna bağımlıysa (dependency) ve aynı anda yürütüldüğünde B işleminin sonucu henüz bitmeden A işlemi yürütülmeye çalışılırsa hata mesajıyla karşılaşılır. Örneğin bir API kullanarak gönderileri çektiğimiz bir yapı olsun. Verilerin tamamı çekilmeden forEach ile verilere erişilmeye çalışılacağından .forEach not a function hatasını alırız.
 
 Hatalı kullanım:
 ```js
